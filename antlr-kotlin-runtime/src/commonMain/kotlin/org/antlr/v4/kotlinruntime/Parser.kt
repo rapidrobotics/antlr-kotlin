@@ -143,8 +143,8 @@ abstract class Parser(input: TokenStream) : Recognizer<Token, ParserATNSimulator
         get() = parseListeners.contains(TrimToSizeListener.INSTANCE)
         set(trimParseTrees) {
             if (trimParseTrees) {
-                    if (trimParseTree) return
-                    addParseListener(TrimToSizeListener.INSTANCE)
+                if (trimParseTree) return
+                addParseListener(TrimToSizeListener.INSTANCE)
             } else {
                 removeParseListener(TrimToSizeListener.INSTANCE)
             }
